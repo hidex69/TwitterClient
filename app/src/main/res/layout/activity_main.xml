@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/toolbar"/>
+    
+
+
+    <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <RelativeLayout
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:layout_width="match_parent">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@mipmap/ic_launcher"
+                            android:id="@+id/user_image_view"/>
+                    <TextView
+                            style="@style/TextViewPrimary.Header"
+                            android:layout_below="@+id/user_image_view"
+                            android:text="Имя"
+                            android:id="@+id/user_text_name_view" android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"/>
+
+                    <TextView
+                            style="@style/TextViewSecondary"
+                            android:text="Ник"
+                            android:layout_below="@+id/user_text_name_view"
+                            android:id="@+id/user_text_nick_view"/>
+
+                    <TextView
+                            style="@style/TextViewPrimary"
+                            android:text="Описание"
+                            android:layout_below="@+id/user_text_nick_view"
+                            android:id="@+id/user_text_description_view"/>
+
+                    <TextView
+                            style="@style/TextViewSecondary"
+                            android:text="Местоположение"
+                            android:layout_marginLeft="5dp"
+                            android:layout_below="@+id/user_text_description_view"
+                            android:layout_toRightOf="@id/user_text_location_icon_view"
+                            android:id="@+id/user_text_location_view"/>
+
+                    <TextView
+                            style="@style/TextIcon"
+                            android:text="@string/fa_map_marker"
+                            android:layout_below="@+id/user_text_description_view"
+                            android:id="@+id/user_text_location_icon_view"/>
+
+
+                    <TextView
+                            style="@style/TextViewSecondary"
+                            android:text="Читает"
+                            android:layout_toRightOf="@id/following_count_text_view"
+                            android:layout_below="@id/user_text_location_view"
+                            android:layout_marginLeft="10dp"
+                            android:id="@+id/following_text_view"/>
+
+                    <TextView
+                            style="@style/TextViewSecondary"
+                            android:text="Читатели"
+                            android:layout_below="@id/user_text_location_view"
+                            android:layout_toRightOf="@+id/followers_count_text_view"
+                            android:layout_marginLeft="20dp"
+                            android:id="@+id/followers_text_view"/>
+
+                    <TextView
+                            style="@style/TextViewPrimary.Bold"
+                            android:text="4"
+                            android:layout_below="@id/user_text_location_view"
+                            android:layout_marginLeft="15dp"
+                            android:layout_toRightOf="@id/following_text_view"
+                            android:id="@+id/followers_count_text_view"/>
+
+
+                    <TextView
+                            style="@style/TextViewPrimary.Bold"
+                            android:text="5"
+                            android:layout_below="@id/user_text_location_view"
+                            android:id="@+id/following_count_text_view"/>
+
+
+                </RelativeLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:layout_height="6dp"
+                        android:background="@color/gray_mercury"
+                        android:id="@+id/view"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/tweets_recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+            </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
+
+
